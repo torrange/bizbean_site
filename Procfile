@@ -1,0 +1,1 @@
+web: gunicorn bizbean_cli:app --log-file=-
