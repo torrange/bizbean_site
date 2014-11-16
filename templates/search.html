@@ -1,4 +1,7 @@
-<div class="search .col-lg-12">
+{% extends "index.html" %}
+
+	{% block content %} 
+		<div class="search .col-lg-12">
 			<h1>Search Business easily</h1>
 			<form action="">
 				<input type="text" name="industry" placeholder="Industry name">
@@ -7,3 +10,4 @@
 				<!--<i class="fa fa-share"></i>-->
 			</form>
 		</div>
+	{% endblock %}
