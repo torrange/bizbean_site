@@ -3,10 +3,11 @@
 	{% block content %} 
 		<div class="search .col-lg-12">
 			<h1>Search Business easily</h1>
-			<form action="">
+			<form action="/results" method="POST">
 				<input type="text" name="industry" placeholder="Industry name">
 				<i class="fa fa-plus"></i>
 				<input type="text" name="city" placeholder="City">
+				<input class="btn" type="submit">
 				<!--<i class="fa fa-share"></i>-->
 			</form>
 		</div>

@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
 from requests import get
 from json import loads
 
@@ -11,9 +10,15 @@ app = Flask(__name__)
 def main_page():
     return render_template('search.html')
 
-@app.route('/results')
+@app.route('/results', methods=['POST'])
 def results():
-    return render_template('business-list.html')
+    if request.method == "POST":
+        industry = request.form["industry"]
+        city = request.form["city"]
+        r = get("http://api.bizbean.co.uk/%s/%s" % (city, industry))
+        content = loads(r.content)
+        result_length = len(content)
+        return render_template('business-list.html', city=city, industry=industry, result_length=result_length, content=content )
 
 
 
@@ -43,3 +48,6 @@ def results():
 # "BusinessName": "2 Way Travel",  
 # "LatLon": [5.0, 1.0]
 # }
+
+# if __name__ == "__main__":
+#     app.run(debug=True)

@@ -2,73 +2,17 @@
 
 {% block content %} 
 <div class="inner">
-			<h1>{{ count }} results of {{ Industry }} in {{ city }}</h1>
+			<h1>{{ result_length }} results of {{ industry }} in {{ city }}</h1>
+			
 			<div class="list col-lg-11">
+			{% for result in content %}
 				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
+					<div class="business-data">{{ result.values()[9] }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
 					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
 				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
-				<div class="element">
-					<div class="business-data">{{ business_name }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
-					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-				</div>
+			{% endfor %}
 			</div>
+			
 			<div class="aside2 col-lg-1">
 				<div class="column">
 					<i class="fa fa-list"></i>
