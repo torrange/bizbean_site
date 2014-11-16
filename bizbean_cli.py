@@ -20,15 +20,23 @@ def results():
         result_length = len(content)
         return render_template('business-list.html', city=city, industry=industry, result_length=result_length, content=content )
 
-@app.route('/busview', methods=['GET'])
+@app.route('/busview', methods=['POST'])
 def busview():
-    if request.method == "GET":
-        #industry = request.form["industry"]
+    if request.method == "POST":
+        business_name = request.form["business_name"]
+        addr_1 = request.form["addr_1"]
+        addr_2 = request.form["addr_2"]
+        city = request.form["city"]
+        county = request.form["county"]
+        phone_number = request.form["phone_number"]
+        logo_url = request.form["logo_url"]
+        if logo_url == "None":
+            logo_url = "http://placehold.it/150x150"
         #city = request.form["city"]
         #r = get("http://api.bizbean.co.uk/%s/%s" % (city, industry))
         #content = loads(r.content)
         #result_length = len(content)
-        return render_template("business-view.html")
+        return render_template("business-view.html", business_name=business_name, addr1=addr_1, addr2=addr_2, city=city, county=county, phone_number=phone_number, logo_url=logo_url)
         #return render_template('business-list.html', city=city, industry=industry, result_length=result_length, content=content )
 
 

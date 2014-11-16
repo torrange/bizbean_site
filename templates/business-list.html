@@ -4,15 +4,27 @@
 <div class="inner">
 			<h1>{{ result_length }} results of {{ industry }} in {{ city }}</h1>
 			
+
 			<div class="list col-lg-11">
 			{% for result in content %}
-				<div class="element">
+			<form style="display: hidden" action="/busview" method="POST" id="form">
+				<div class="element" onclick="parentNode.submit();">
+					<input type="hidden" id="business_name" name="business_name" value="{{ result["BusinessName"] }}"/>
+					<input type="hidden" id="addr_1" name="addr_1" value="{{ result["Addr1"] }}"/>
+					<input type="hidden" id="addr_2" name="addr_2" value="{{ result["Addr2"] }}"/>
+					<input type="hidden" id="city" name="city" value="{{ city }}"/>
+					<input type="hidden" id="phone_number" name="phone_number" value="{{ result["Phone"] }}"/>
+					<input type="hidden" id="county" name="county" value="{{ result["County"] }}"/>
+					<input type="hidden" id="logo_url" name="logo_url" value="{{ result["LogoUrl"] }}"/>
 					<div class="business-data"><strong>{{ result["BusinessName"] }}</strong> - {{ result["Addr1"] }}, {{ result["Addr2"] }}, {{ city }}, {{ result["PostCode"] }} </div>
 					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
 				</div>
+			</form>
 			{% endfor %}
 			</div>
 			
+
+
 			<div class="aside2 col-lg-1">
 				<div class="column">
 					<i class="fa fa-list"></i>
