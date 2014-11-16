@@ -7,7 +7,7 @@
 			<div class="list col-lg-11">
 			{% for result in content %}
 				<div class="element">
-					<div class="business-data">{{ result["BusinessName"] }} - {{ addr1 }}, {{ addr2 }}, {{ post_code }}, {{ city }} </div>
+					<div class="business-data">{{ result["BusinessName"] }} - {{ result["Addr1"] }}, {{ result["Addr2"] }}, {{ result["PostCode"] }}, {{ city }} </div>
 					<div class="star-icon"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
 				</div>
 			{% endfor %}
